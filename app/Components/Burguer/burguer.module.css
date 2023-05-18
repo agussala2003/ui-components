@@ -1,0 +1,123 @@
+/* styles for the component Burguer.jsx */
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.burguer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 33px;
+  height: 33px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 10;
+}
+.burguer:focus {
+  outline: none;
+}
+.line {
+  width: 33px;
+  height: 4px;
+  background: #EEEEEE;
+  border-radius: 10px;
+  transition: all 0.3s linear;
+  position: relative;
+  transform-origin: 1px;
+}
+.lineOpen:first-child {
+  width: 33px;
+  height: 4px;
+  background: #EEEEEE;
+  border-radius: 10px;
+  transition: all 0.3s linear;
+  position: relative;
+  transform-origin: 1px;
+  transform: rotate(45deg);
+}
+.lineOpen:nth-child(2) {
+  width: 33px;
+  height: 4px;
+  background: #EEEEEE;
+  border-radius: 10px;
+  transition: all 0.3s linear;
+  position: relative;
+  transform-origin: 1px;
+  opacity: 0;
+  transform: translateX(20px);
+}
+.lineOpen:nth-child(3) {
+  width: 33px;
+  height: 4px;
+  background: #EEEEEE;
+  border-radius: 10px;
+  transition: all 0.3s linear;
+  position: relative;
+  transform-origin: 1px;
+  transform: rotate(-45deg);
+}
+/* styles for the component Nav.jsx */
+.nav {
+  background: #222831;
+  padding: 20px;
+  display: flex;
+  justify-content: end;
+}
+.links {
+  text-decoration: none;
+  color: #eeeeee;
+  font-size: 20px;
+  font-weight: 500;
+  transition: all 0.3s;
+}
+.ul {
+  display: none;
+}
+.ulActive {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  flex-direction: column;
+  position: absolute;
+  background: #222831;
+  width: -webkit-fill-available;
+  height: -webkit-fill-available;
+  top: 70px;
+  left: 0;
+  z-index: 20;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  animation: appear 0.3s linear;
+}
+
+@media (min-width:1024px) {
+  .burguer {
+    display: none;
+  }
+  .ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    background: #222831;
+    width: -webkit-fill-available;
+    height: -webkit-fill-available;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    animation: appear 0.3s linear;
+  }
+  .links:hover {
+    font-weight: 700;
+    transform: scale(1.03);
+  }
+}
+
+/* styles for the component Page.jsx */
